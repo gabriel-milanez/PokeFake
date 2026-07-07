@@ -18,4 +18,17 @@ class VideoScreen extends StatefulWidget {
   const VideoScreen({super.key});
 
   @override
+  State<VideoScreen> createState() => _VideoScreenState();
+}
+
+class _VideoScreenState extends State<VideoScreen> {
+  late VideoPlayerController_controller;
+
+  @override
+  void initState() {
+    super.initState();
+    _controller = VideoPlayerController.networkURL(
+      Uri.parse('https://flutter.github.io/assets-for-api-docs/assets/videos/bee.mp4'),
+    )
+  }
 }
